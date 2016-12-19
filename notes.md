@@ -1,7 +1,8 @@
-To enable ESLinter for a new project, run the following command:
+### ESLinter
+  - for a new project, run the following command:
   - npm install --save-dev eslint-config-rallycoding (or any npm module that contains an eslint-config rule set)
 
-Difference between React & React Native
+### Difference between React & React Native
   - React
     - Knows how a component should behave
       - What functions it should have
@@ -14,7 +15,7 @@ Difference between React & React Native
 Only the 'root' component uses 'AppRegistry'
  - Every other component that the root component uses will be a 'child' component
 
-Styling
+### Styling
  - FlexBox
   - System of positioning elements within a container
   - justifyContent (positions in the vertical direction (up / down))
@@ -40,22 +41,56 @@ Styling
   - flex: 1
     - Expand to fill as much content as you can (within whatever container / parent component you're being rendered)
 
-Functional components
+### Functional components
   - Only rule is that they must return some amount of JSX
   - Presenting static data
   - Can't be used for fetching data
 
-Class-based component
+### Class-based component
   - Used for dynamic data sources
   - Handles any data that might change
     - Fetching data, user events, etc.
   - Knows when it gets re-rendered
 
-Rules of Component State:
+### Rules of Component State:
   - Definition: A plain Javascript object used to record and respond to user-triggered events.
   - When we need to update what a component shows, call this.setState({})
   - Only change via this.setState({}) not this.state
 
-Difference between state and props
+### Difference between state and props
   - Whenever we want to communicate from parent --> child, we use props.
   - State is for a component's internal record-keeping
+
+### Redux
+  - Why Redux?
+    - Redux is the best way to maintain code organization as an application grows.
+      - Code simplicity.
+  - Reducer
+    - A function that returns some data.
+    - Never mutate state in a reducer. Instead, completely recreate it.
+      - Golden rule: always return brand new objects in reducers.
+    - E.g. return [...state, action.payload];
+  - Action
+    - Plain Javascript Object (curly braces)
+    - An object that tells the reducer how to modify its data.
+    - One requirement - must have a "type" property.
+    - Action also typically has a "payload" property (the data you want it to act on).
+  - State
+    - Application's data.
+    - Data for our app to use.
+  - Store
+    - An object that holds the application's data.
+  - Redux.createStore() expects at least one Reducer function.
+    - Whatever the reducer returns is our application state.
+  - connect()
+    - Allows a component to access application state.
+    - E.g. export default connect()(ComponentName)
+      - connect has two arguments
+        - First argument is mapStateToProps
+          - Pass in null if don't want to map anything to props.
+        - Second argument is any action creators this Component needs to call
+  - App starts
+    - Store is created
+    - Evaluate all Reducers in reducers/index.js to get initial application state.
+    - "Provider" - this is new to me. Need to research further whether this is new to Redux or just wasn't covered in previous courses.
+    - mapStateToProps returns an object which takes a portion of the application state and makes it locally available to the component via this.props
