@@ -7,6 +7,7 @@ import firebase from 'firebase';
 // Local file imports
 import reducers from './reducers';
 import { config } from '../firebasecredentials';
+import Login from './components/Login';
 
 class App extends Component {
 
@@ -17,9 +18,7 @@ class App extends Component {
   render() {
     return (
       <Provider store={createStore(reducers)}>
-        <View >
-          <Text> Hello </Text>
-        </View>
+        <Login />
       </Provider>
     );
   }

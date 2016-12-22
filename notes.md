@@ -61,7 +61,7 @@ Only the 'root' component uses 'AppRegistry'
   - Whenever we want to communicate from parent --> child, we use props.
   - State is for a component's internal record-keeping
 
-### Redux
+## Redux
   - Why Redux?
     - Redux is the best way to maintain code organization as an application grows.
       - Code simplicity.
@@ -94,3 +94,6 @@ Only the 'root' component uses 'AppRegistry'
     - Evaluate all Reducers in reducers/index.js to get initial application state.
     - "Provider" - this is new to me. Need to research further whether this is new to Redux or just wasn't covered in previous courses.
     - mapStateToProps returns an object which takes a portion of the application state and makes it locally available to the component via this.props
+  - Redux convention to create a "types.js" file where you export the action types (instead of at top of actions/index.js)
+
+### Async Redux (Redux Thunk)
