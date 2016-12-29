@@ -101,10 +101,24 @@ Only the 'root' component uses 'AppRegistry'
     - Dispatches this function
 
 ### Routing Between Different Views
+https://github.com/aksonov/react-native-router-flux
 ```
 npm install --save react-native-router-flux
 import { Scene } from 'react-native-router-flux
 ```
+  - Modify all props directly in the ```<Scene />``` tag
   - "key" prop identifies a particular screen
   - "component" prop tells what component / container to show
   - "title" prop gives a pre-built header with some special properties
+  - Nest scenes to enable / disable the "Back" button
+  - Actions.keyName() is used to trigger a Scene change
+    - E.g. Actions.employeeList() after triggering the LOGIN_USER_SUCCESS action type.
+    - Can't call directly to a nested Scene (must call the top layer)
+      - The first <Scene /> inside of the nested Scene will display when you call the outer key.
+      - Cannot call Actions.employeeList() anymore
+      - Must instead call Actions.main()
+```
+<Scene key="main">
+  <Scene key="employeeList" component={EmployeeList} title="Employees" />
+</Scene>
+```
