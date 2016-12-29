@@ -97,3 +97,14 @@ Only the 'root' component uses 'AppRegistry'
   - Redux convention to create a "types.js" file where you export the action types (instead of at top of actions/index.js)
 
 ### Async Redux (Redux Thunk)
+  - Allows you to return a function instead of an action
+    - Dispatches this function
+
+### Routing Between Different Views
+```
+npm install --save react-native-router-flux
+import { Scene } from 'react-native-router-flux
+```
+  - "key" prop identifies a particular screen
+  - "component" prop tells what component / container to show
+  - "title" prop gives a pre-built header with some special properties
