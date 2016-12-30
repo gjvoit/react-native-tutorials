@@ -40,7 +40,7 @@ class Login extends Component {
       <Card>
         <CardSection>
           <Input
-            label="Email"
+            labelText="Email"
             placeholder="email@email.com"
             onChangeText={this.onEmailChange.bind(this)}
             value={email}
@@ -49,7 +49,7 @@ class Login extends Component {
         <CardSection>
           <Input
             secureTextEntry
-            label="Password"
+            labelText="Password"
             placeholder="password"
             onChangeText={this.onPasswordChange.bind(this)}
             value={password}

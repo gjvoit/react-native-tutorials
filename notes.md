@@ -1,3 +1,5 @@
+https://facebook.github.io/react-native/docs/getting-started.html
+
 ### ESLinter
   - for a new project, run the following command:
   - npm install --save-dev eslint-config-rallycoding (or any npm module that contains an eslint-config rule set)
@@ -40,6 +42,10 @@ Only the 'root' component uses 'AppRegistry'
       - shadowOffset: { width: 0, height: 2 }
   - flex: 1
     - Expand to fill as much content as you can (within whatever container / parent component you're being rendered)
+  - Override styling on a particular custom component
+    - Pass in an array to the primitive type within our custom component (likely a View)
+      - Arguments to the right override existing arguments defined earlier in the array
+        - E.g. <View style={[styles.containerStyle, props.style]}>
 
 ### Functional components
   - Only rule is that they must return some amount of JSX
