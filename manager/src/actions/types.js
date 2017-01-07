@@ -7,3 +7,5 @@ export const LOGIN_USER_FAIL = 'LOGIN_USER_FAIL';
 
 // Employee Action Types
 export const EMPLOYEE_UPDATE = 'EMPLOYEE_UPDATE';
+export const EMPLOYEE_CREATE = 'EMPLOYEE_CREATE';
+export const EMPLOYEES_FETCH_SUCCESS = 'EMPLOYEES_FETCH_SUCCESS';

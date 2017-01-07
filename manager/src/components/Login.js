@@ -33,8 +33,6 @@ class Login extends Component {
   }
 
   render() {
-    console.log(this.props.email);
-    console.log(this.props.password);
     const { email, password } = this.props;
     return (
       <Card>
@@ -72,7 +70,7 @@ const styles = {
   }
 };
 
-/* auth is destructure off of state (i.e. state.auth) hence the need for the braces '{}'
+/* auth is destructured off of state (i.e. state.auth) hence the need for the braces '{}'
  * Could also do the following:
  * const mapStateToProps = state => {
  * const { email, password, error } = state.auth;
